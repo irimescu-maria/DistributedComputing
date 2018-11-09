@@ -1,0 +1,13 @@
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\StatisticalApp.exe.config
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\StatisticalApp.exe
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\StatisticalApp.pdb
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\MetroFramework.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.csprojAssemblyReference.cache
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.LoginForm.resources
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.Properties.Resources.resources
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.csproj.GenerateResource.cache
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.csproj.CoreCompileInputs.cache
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.csproj.CopyComplete
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.exe
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.pdb
