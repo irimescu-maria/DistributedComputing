@@ -11,3 +11,8 @@ C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.csproj.CopyComplete
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.exe
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.pdb
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\EntityFramework.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\EntityFramework.xml
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\StatisticalApp\StatisticalApp\obj\Debug\StatisticalApp.Migrations.InitialCreate.resources

@@ -31,21 +31,21 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.LoginPage = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.label_Username = new MetroFramework.Controls.MetroLabel();
-            this.label_Password = new MetroFramework.Controls.MetroLabel();
-            this.txtBox_Username = new MetroFramework.Controls.MetroTextBox();
-            this.txtBox_Password = new MetroFramework.Controls.MetroTextBox();
-            this.btn_Login = new MetroFramework.Controls.MetroButton();
             this.btn_Cancel_Login = new MetroFramework.Controls.MetroButton();
-            this.label_Username_Register = new MetroFramework.Controls.MetroLabel();
-            this.label_Password_Register = new MetroFramework.Controls.MetroLabel();
-            this.label_Confirm_Password_Register = new MetroFramework.Controls.MetroLabel();
-            this.txtBox_Username_Register = new MetroFramework.Controls.MetroTextBox();
-            this.txtBox_Password_Register = new MetroFramework.Controls.MetroTextBox();
-            this.txtBox_Confirm_Password_Register = new MetroFramework.Controls.MetroTextBox();
-            this.btn_Register = new MetroFramework.Controls.MetroButton();
+            this.btn_Login = new MetroFramework.Controls.MetroButton();
+            this.txtBox_Password = new MetroFramework.Controls.MetroTextBox();
+            this.txtBox_Username = new MetroFramework.Controls.MetroTextBox();
+            this.label_Password = new MetroFramework.Controls.MetroLabel();
+            this.label_Username = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.btn_Cancel_Register = new MetroFramework.Controls.MetroButton();
+            this.btn_Register = new MetroFramework.Controls.MetroButton();
+            this.txtBox_Confirm_Password_Register = new MetroFramework.Controls.MetroTextBox();
+            this.txtBox_Password_Register = new MetroFramework.Controls.MetroTextBox();
+            this.txtBox_Username_Register = new MetroFramework.Controls.MetroTextBox();
+            this.label_Confirm_Password_Register = new MetroFramework.Controls.MetroLabel();
+            this.label_Password_Register = new MetroFramework.Controls.MetroLabel();
+            this.label_Username_Register = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -99,6 +99,57 @@
             this.metroTabPage1.Text = "Login";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
+            // btn_Cancel_Login
+            // 
+            this.btn_Cancel_Login.Location = new System.Drawing.Point(143, 210);
+            this.btn_Cancel_Login.Name = "btn_Cancel_Login";
+            this.btn_Cancel_Login.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel_Login.TabIndex = 7;
+            this.btn_Cancel_Login.Text = "Cancel";
+            this.btn_Cancel_Login.Click += new System.EventHandler(this.btn_Cancel_Login_Click);
+            // 
+            // btn_Login
+            // 
+            this.btn_Login.Location = new System.Drawing.Point(37, 210);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(75, 23);
+            this.btn_Login.TabIndex = 6;
+            this.btn_Login.Text = "Login";
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            // 
+            // txtBox_Password
+            // 
+            this.txtBox_Password.Location = new System.Drawing.Point(103, 120);
+            this.txtBox_Password.Name = "txtBox_Password";
+            this.txtBox_Password.PasswordChar = '*';
+            this.txtBox_Password.Size = new System.Drawing.Size(147, 23);
+            this.txtBox_Password.TabIndex = 5;
+            // 
+            // txtBox_Username
+            // 
+            this.txtBox_Username.Location = new System.Drawing.Point(103, 72);
+            this.txtBox_Username.Name = "txtBox_Username";
+            this.txtBox_Username.Size = new System.Drawing.Size(147, 23);
+            this.txtBox_Username.TabIndex = 4;
+            // 
+            // label_Password
+            // 
+            this.label_Password.AutoSize = true;
+            this.label_Password.Location = new System.Drawing.Point(5, 120);
+            this.label_Password.Name = "label_Password";
+            this.label_Password.Size = new System.Drawing.Size(64, 19);
+            this.label_Password.TabIndex = 3;
+            this.label_Password.Text = "Password";
+            // 
+            // label_Username
+            // 
+            this.label_Username.AutoSize = true;
+            this.label_Username.Location = new System.Drawing.Point(5, 72);
+            this.label_Username.Name = "label_Username";
+            this.label_Username.Size = new System.Drawing.Size(68, 19);
+            this.label_Username.TabIndex = 2;
+            this.label_Username.Text = "Username";
+            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.btn_Cancel_Register);
@@ -117,72 +168,44 @@
             this.metroTabPage2.Text = "Register";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             // 
-            // label_Username
+            // btn_Cancel_Register
             // 
-            this.label_Username.AutoSize = true;
-            this.label_Username.Location = new System.Drawing.Point(5, 72);
-            this.label_Username.Name = "label_Username";
-            this.label_Username.Size = new System.Drawing.Size(68, 19);
-            this.label_Username.TabIndex = 2;
-            this.label_Username.Text = "Username";
+            this.btn_Cancel_Register.Location = new System.Drawing.Point(162, 215);
+            this.btn_Cancel_Register.Name = "btn_Cancel_Register";
+            this.btn_Cancel_Register.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel_Register.TabIndex = 9;
+            this.btn_Cancel_Register.Text = "Cancel";
             // 
-            // label_Password
+            // btn_Register
             // 
-            this.label_Password.AutoSize = true;
-            this.label_Password.Location = new System.Drawing.Point(5, 120);
-            this.label_Password.Name = "label_Password";
-            this.label_Password.Size = new System.Drawing.Size(64, 19);
-            this.label_Password.TabIndex = 3;
-            this.label_Password.Text = "Password";
+            this.btn_Register.Location = new System.Drawing.Point(48, 215);
+            this.btn_Register.Name = "btn_Register";
+            this.btn_Register.Size = new System.Drawing.Size(75, 23);
+            this.btn_Register.TabIndex = 8;
+            this.btn_Register.Text = "Register";
             // 
-            // txtBox_Username
+            // txtBox_Confirm_Password_Register
             // 
-            this.txtBox_Username.Location = new System.Drawing.Point(103, 72);
-            this.txtBox_Username.Name = "txtBox_Username";
-            this.txtBox_Username.Size = new System.Drawing.Size(147, 23);
-            this.txtBox_Username.TabIndex = 4;
+            this.txtBox_Confirm_Password_Register.Location = new System.Drawing.Point(162, 134);
+            this.txtBox_Confirm_Password_Register.Name = "txtBox_Confirm_Password_Register";
+            this.txtBox_Confirm_Password_Register.PasswordChar = '*';
+            this.txtBox_Confirm_Password_Register.Size = new System.Drawing.Size(155, 23);
+            this.txtBox_Confirm_Password_Register.TabIndex = 7;
             // 
-            // txtBox_Password
+            // txtBox_Password_Register
             // 
-            this.txtBox_Password.Location = new System.Drawing.Point(103, 120);
-            this.txtBox_Password.Name = "txtBox_Password";
-            this.txtBox_Password.PasswordChar = '*';
-            this.txtBox_Password.Size = new System.Drawing.Size(147, 23);
-            this.txtBox_Password.TabIndex = 5;
+            this.txtBox_Password_Register.Location = new System.Drawing.Point(162, 99);
+            this.txtBox_Password_Register.Name = "txtBox_Password_Register";
+            this.txtBox_Password_Register.PasswordChar = '*';
+            this.txtBox_Password_Register.Size = new System.Drawing.Size(155, 23);
+            this.txtBox_Password_Register.TabIndex = 6;
             // 
-            // btn_Login
+            // txtBox_Username_Register
             // 
-            this.btn_Login.Location = new System.Drawing.Point(37, 210);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(75, 23);
-            this.btn_Login.TabIndex = 6;
-            this.btn_Login.Text = "Login";
-            // 
-            // btn_Cancel_Login
-            // 
-            this.btn_Cancel_Login.Location = new System.Drawing.Point(143, 210);
-            this.btn_Cancel_Login.Name = "btn_Cancel_Login";
-            this.btn_Cancel_Login.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancel_Login.TabIndex = 7;
-            this.btn_Cancel_Login.Text = "Cancel";
-            // 
-            // label_Username_Register
-            // 
-            this.label_Username_Register.AutoSize = true;
-            this.label_Username_Register.Location = new System.Drawing.Point(25, 63);
-            this.label_Username_Register.Name = "label_Username_Register";
-            this.label_Username_Register.Size = new System.Drawing.Size(68, 19);
-            this.label_Username_Register.TabIndex = 2;
-            this.label_Username_Register.Text = "Username";
-            // 
-            // label_Password_Register
-            // 
-            this.label_Password_Register.AutoSize = true;
-            this.label_Password_Register.Location = new System.Drawing.Point(25, 103);
-            this.label_Password_Register.Name = "label_Password_Register";
-            this.label_Password_Register.Size = new System.Drawing.Size(64, 19);
-            this.label_Password_Register.TabIndex = 3;
-            this.label_Password_Register.Text = "Password";
+            this.txtBox_Username_Register.Location = new System.Drawing.Point(162, 59);
+            this.txtBox_Username_Register.Name = "txtBox_Username_Register";
+            this.txtBox_Username_Register.Size = new System.Drawing.Size(155, 23);
+            this.txtBox_Username_Register.TabIndex = 5;
             // 
             // label_Confirm_Password_Register
             // 
@@ -193,44 +216,23 @@
             this.label_Confirm_Password_Register.TabIndex = 4;
             this.label_Confirm_Password_Register.Text = "Confirm Password";
             // 
-            // txtBox_Username_Register
+            // label_Password_Register
             // 
-            this.txtBox_Username_Register.Location = new System.Drawing.Point(162, 59);
-            this.txtBox_Username_Register.Name = "txtBox_Username_Register";
-            this.txtBox_Username_Register.Size = new System.Drawing.Size(155, 23);
-            this.txtBox_Username_Register.TabIndex = 5;
+            this.label_Password_Register.AutoSize = true;
+            this.label_Password_Register.Location = new System.Drawing.Point(25, 103);
+            this.label_Password_Register.Name = "label_Password_Register";
+            this.label_Password_Register.Size = new System.Drawing.Size(64, 19);
+            this.label_Password_Register.TabIndex = 3;
+            this.label_Password_Register.Text = "Password";
             // 
-            // txtBox_Password_Register
+            // label_Username_Register
             // 
-            this.txtBox_Password_Register.Location = new System.Drawing.Point(162, 99);
-            this.txtBox_Password_Register.Name = "txtBox_Password_Register";
-            this.txtBox_Password_Register.PasswordChar = '*';
-            this.txtBox_Password_Register.Size = new System.Drawing.Size(155, 23);
-            this.txtBox_Password_Register.TabIndex = 6;
-            // 
-            // txtBox_Confirm_Password_Register
-            // 
-            this.txtBox_Confirm_Password_Register.Location = new System.Drawing.Point(162, 134);
-            this.txtBox_Confirm_Password_Register.Name = "txtBox_Confirm_Password_Register";
-            this.txtBox_Confirm_Password_Register.PasswordChar = '*';
-            this.txtBox_Confirm_Password_Register.Size = new System.Drawing.Size(155, 23);
-            this.txtBox_Confirm_Password_Register.TabIndex = 7;
-            // 
-            // btn_Register
-            // 
-            this.btn_Register.Location = new System.Drawing.Point(48, 215);
-            this.btn_Register.Name = "btn_Register";
-            this.btn_Register.Size = new System.Drawing.Size(75, 23);
-            this.btn_Register.TabIndex = 8;
-            this.btn_Register.Text = "Register";
-            // 
-            // btn_Cancel_Register
-            // 
-            this.btn_Cancel_Register.Location = new System.Drawing.Point(162, 215);
-            this.btn_Cancel_Register.Name = "btn_Cancel_Register";
-            this.btn_Cancel_Register.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancel_Register.TabIndex = 9;
-            this.btn_Cancel_Register.Text = "Cancel";
+            this.label_Username_Register.AutoSize = true;
+            this.label_Username_Register.Location = new System.Drawing.Point(25, 63);
+            this.label_Username_Register.Name = "label_Username_Register";
+            this.label_Username_Register.Size = new System.Drawing.Size(68, 19);
+            this.label_Username_Register.TabIndex = 2;
+            this.label_Username_Register.Text = "Username";
             // 
             // LoginForm
             // 
