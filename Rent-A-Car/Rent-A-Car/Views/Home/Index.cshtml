@@ -1,31 +1,34 @@
-﻿@{
+﻿@model Rent_A_Car.ViewModels.RegisterFormViewModel
+@{
+    /**/
+
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@using (Html.BeginForm("Register", "Home"))
+{
+    <h2>Register</h2>
+    <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Registration.Username, new { @class = "form-control ", @placeholder = "Username"}  )
+        @Html.ValidationMessageFor(m => m.Registration.Username)
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Registration.Password, new { @class = "form-control ", @placeholder = "Password" })
+        @Html.ValidationMessageFor(m => m.Registration.Password)
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Registration.PasswordConfirmation, new { @class = "form-control", @placeholder = "Confirm password" })
+        @Html.ValidationMessageFor(m => m.Registration.PasswordConfirmation)
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.Registration.RoleId, new SelectList(Model.RoleTypes, "Id", "Name"), "Select Role Type", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Registration.RoleId)
     </div>
-</div>
+
+    @Html.HiddenFor(m => m.Registration.Id)
+    <button type="submit" class="btn btn-primary">Register</button>
+}
