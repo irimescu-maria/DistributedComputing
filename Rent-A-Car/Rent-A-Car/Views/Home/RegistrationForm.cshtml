@@ -1,0 +1,57 @@
+﻿@model Rent_A_Car.ViewModels.RegisterFormViewModel
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Home Page";
+    @*@Model.Registration.IsAuthenticated= true;*@
+}
+@if (ViewBag.Status != null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @*@Html.ActionLink("Hello " + Model.Registration.Username.ToString() + "!", "Index", "Home")*@
+            "Hello"
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+}
+else
+{
+    using (Html.BeginForm("Register", "Home", FormMethod.Post))
+    {
+        <h2>Register</h2>
+        <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        @Html.ValidationSummary(true, "Please fix the following errors.")
+        @Html.HiddenFor(m => m.Registration.Id)
+        @Html.AntiForgeryToken()
+
+
+   
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.Username)
+
+            @Html.TextBoxFor(m => m.Registration.Username, new { @class = "form-control ", @placeholder = "Username" })
+            @Html.ValidationMessageFor(m => m.Registration.Username)
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Registration.Password, new { @class = "form-control ", @placeholder = "Password" })
+            @Html.ValidationMessageFor(m => m.Registration.Password)
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Registration.PasswordConfirmation, new { @class = "form-control", @placeholder = "Confirm password" })
+            @Html.ValidationMessageFor(m => m.Registration.PasswordConfirmation)
+        </div>
+
+        <div class="form-group">
+            @Html.DropDownListFor(m => m.Registration.RoleId, new SelectList(Model.RoleTypes, "Id", "Name"), "Select Role Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Registration.RoleId)
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    }
+}

@@ -13,7 +13,7 @@ namespace Rent_A_Car.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812011210030_CreateTableRegistration"; }
+            get { return "201812020658475_CreateTableRegistration"; }
         }
         
         string IMigrationMetadata.Source

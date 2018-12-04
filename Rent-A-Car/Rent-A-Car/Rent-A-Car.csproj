@@ -132,19 +132,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812011210030_CreateTableRegistration.cs" />
-    <Compile Include="Migrations\201812011210030_CreateTableRegistration.Designer.cs">
-      <DependentUpon>201812011210030_CreateTableRegistration.cs</DependentUpon>
+    <Compile Include="Migrations\201812020658475_CreateTableRegistration.cs" />
+    <Compile Include="Migrations\201812020658475_CreateTableRegistration.Designer.cs">
+      <DependentUpon>201812020658475_CreateTableRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812021832359_UpdateTableRegistration.cs" />
+    <Compile Include="Migrations\201812021832359_UpdateTableRegistration.Designer.cs">
+      <DependentUpon>201812021832359_UpdateTableRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812022055159_DeleteRowFromTableRegistration.cs" />
+    <Compile Include="Migrations\201812022055159_DeleteRowFromTableRegistration.Designer.cs">
+      <DependentUpon>201812022055159_DeleteRowFromTableRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Registration.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +193,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\RegistrationForm.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -201,8 +215,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812011210030_CreateTableRegistration.resx">
-      <DependentUpon>201812011210030_CreateTableRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812020658475_CreateTableRegistration.resx">
+      <DependentUpon>201812020658475_CreateTableRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812021832359_UpdateTableRegistration.resx">
+      <DependentUpon>201812021832359_UpdateTableRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812022055159_DeleteRowFromTableRegistration.resx">
+      <DependentUpon>201812022055159_DeleteRowFromTableRegistration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

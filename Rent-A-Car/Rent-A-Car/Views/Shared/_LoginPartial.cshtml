@@ -1,0 +1,16 @@
+﻿@*@model Rent_A_Car.ViewModels.LoginViewModel*@
+    @if (Request.IsAuthenticated)
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li> @Html.ActionLink("Hello, " + User.Identity.Name + "!","Index")</li>
+            <li>  @Html.ActionLink("Sign Out", "Logout", "Account")</li>
+        </ul>
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Register", "Register", "Home")</li>
+            < span > | </ span >
+            <li>@Html.ActionLink("Sign In", "Login", "Account")</li>
+        </ul>
+    }

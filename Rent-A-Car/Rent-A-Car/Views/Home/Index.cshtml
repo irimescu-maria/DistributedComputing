@@ -1,34 +1,8 @@
-﻿@model Rent_A_Car.ViewModels.RegisterFormViewModel
+﻿@model Rent_A_Car.Models.Registration
+
 @{
-    /**/
-
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
 
-@using (Html.BeginForm("Register", "Home"))
-{
-    <h2>Register</h2>
-    <p class="hint-text">Create your account. It's free and only takes a minute.</p>
-    <div class="form-group">
-        @Html.TextBoxFor(m => m.Registration.Username, new { @class = "form-control ", @placeholder = "Username"}  )
-        @Html.ValidationMessageFor(m => m.Registration.Username)
-    </div>
+<h2>Index</h2>
 
-    <div class="form-group">
-        @Html.TextBoxFor(m => m.Registration.Password, new { @class = "form-control ", @placeholder = "Password" })
-        @Html.ValidationMessageFor(m => m.Registration.Password)
-    </div>
-
-    <div class="form-group">
-        @Html.TextBoxFor(m => m.Registration.PasswordConfirmation, new { @class = "form-control", @placeholder = "Confirm password" })
-        @Html.ValidationMessageFor(m => m.Registration.PasswordConfirmation)
-    </div>
-
-    <div class="form-group">
-        @Html.DropDownListFor(m => m.Registration.RoleId, new SelectList(Model.RoleTypes, "Id", "Name"), "Select Role Type", new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Registration.RoleId)
-    </div>
-
-    @Html.HiddenFor(m => m.Registration.Id)
-    <button type="submit" class="btn btn-primary">Register</button>
-}
