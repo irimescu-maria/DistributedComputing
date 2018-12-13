@@ -15,5 +15,8 @@ namespace Rent_A_Car.Models
 
         public DbSet<Registration> Registrations { get; set; }
         public DbSet<RoleType> RoleTypes { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Transmission> Transmissions { get; set; }
     }
 }

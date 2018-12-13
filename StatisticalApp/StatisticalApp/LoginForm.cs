@@ -51,8 +51,6 @@ namespace StatisticalApp
         private void btn_Cancel_Login_Click(object sender, EventArgs e)
         {
             this.Close();
-            userLogged.IsLogged = false;
-            _context.SaveChanges();
         }
     }
 }

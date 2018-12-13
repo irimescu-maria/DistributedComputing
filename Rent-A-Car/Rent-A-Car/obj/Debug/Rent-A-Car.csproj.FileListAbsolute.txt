@@ -86,3 +86,5 @@ C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Deb
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Debug\Rent_A_Car.Migrations.UpdateTableRegistration.resources
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Debug\Rent_A_Car.Migrations.DeleteRowFromTableRegistration.resources
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Debug\Rent-A-Car.csprojAssemblyReference.cache
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Debug\Rent_A_Car.Migrations.CreateNewTables.resources
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\Rent-A-Car\Rent-A-Car\obj\Debug\Rent_A_Car.Migrations.UpdateCreatedTables.resources

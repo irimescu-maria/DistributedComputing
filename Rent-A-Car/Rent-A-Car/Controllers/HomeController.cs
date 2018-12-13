@@ -15,62 +15,13 @@ namespace Rent_A_Car.Controllers
             _context = new ApplicationDbContext();
         }
 
+        [Authorize(Roles = "2")]
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Register()
-
-        {
-            var role = _context.RoleTypes.ToList();
-
-            var viewModel = new RegisterFormViewModel
-            {
-                Registration = new Registration(),
-                RoleTypes = role
-            };
-            return View("RegistrationForm", viewModel);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterFormViewModel registerViewModel)
-        {
-            bool Status = false;
-            if (!ModelState.IsValid)
-            {
-                registerViewModel.RoleTypes = _context.RoleTypes.ToList();
-
-                return View("RegistrationForm", registerViewModel);
-            }
-            else
-            {
-                var register = new Registration
-                {
-                    Username = registerViewModel.Registration.Username,
-                    Password = registerViewModel.Registration.Password,
-                    PasswordConfirmation = registerViewModel.Registration.PasswordConfirmation,
-                    RoleId = registerViewModel.Registration.RoleId
-                };
-
-                FormsAuthentication.SetAuthCookie(register.RoleType.Name, true);
-
-                Status = true;
-                _context.Registrations.Add(register);
-                _context.SaveChanges();
-
-                return RedirectToAction("Index");
-            }
-
-
-            ViewBag.Status = Status;
-
-            return View("RegistrationForm", registerViewModel);
-        }
-
-        [Authorize(Roles = RoleName.Admin)]
+        [Authorize(Roles = "2")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -78,6 +29,7 @@ namespace Rent_A_Car.Controllers
             return View();
         }
 
+        [Authorize(Roles = "2")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

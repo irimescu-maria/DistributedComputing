@@ -149,11 +149,22 @@
     <Compile Include="Migrations\201812022055159_DeleteRowFromTableRegistration.Designer.cs">
       <DependentUpon>201812022055159_DeleteRowFromTableRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812042110220_CreateNewTables.cs" />
+    <Compile Include="Migrations\201812042110220_CreateNewTables.Designer.cs">
+      <DependentUpon>201812042110220_CreateNewTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042116319_UpdateCreatedTables.cs" />
+    <Compile Include="Migrations\201812042116319_UpdateCreatedTables.Designer.cs">
+      <DependentUpon>201812042116319_UpdateCreatedTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\RoleType.cs" />
+    <Compile Include="Models\Transmission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterFormViewModel.cs" />
@@ -193,10 +204,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\RegistrationForm.cshtml" />
+    <Content Include="Views\Account\RegistrationForm.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -223,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812022055159_DeleteRowFromTableRegistration.resx">
       <DependentUpon>201812022055159_DeleteRowFromTableRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042110220_CreateNewTables.resx">
+      <DependentUpon>201812042110220_CreateNewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042116319_UpdateCreatedTables.resx">
+      <DependentUpon>201812042116319_UpdateCreatedTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
