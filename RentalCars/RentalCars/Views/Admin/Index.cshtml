@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RentalCars.Models.Car>
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("New Car", "New", "Admin", new { @class = "btn btn-primary" })
+
+<br />
+<br />
+@if (Model != null)
+{
+    if (!Model.Any())
+    {
+        <text>We don't have any cars yet.</text>
+    }
+    <table id="cars" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Fabrication Year</th>
+                <th>Motorization</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.Name</td>
+                    <td>@car.FabricationYear</td>
+                    <td>@car.Motorization</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = car.Id })</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+
+}
