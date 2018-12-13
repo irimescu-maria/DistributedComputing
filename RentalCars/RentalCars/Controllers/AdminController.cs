@@ -38,20 +38,41 @@ namespace RentalCars.Controllers
         }
 
         //GET
+        [HttpGet]
         public ActionResult New()
         {
-            var cars = _context.Cars
-                   .Include("Category")
-                   .Include("Transmission")
-                   .ToList();
-            return View(cars);
+            var categories = _context.Categories.ToList();
+            var transmissions = _context.Transmissions.ToList();
+
+            var viewModel = new CarFormViewModel()
+            {
+                Car = new Car(),
+                Categories = categories,
+                Transmissions = transmissions
+            };
+            return View(viewModel);
         }
 
         //POST
-        //public ActionResult New(CarFormViewModel viewModel)
-        //{
+        [HttpPost]
+        public ActionResult New(Car car)
+        {
+            var newCar = new Car
+            {
+                Name = car.Name,
+                FabricationYear = car.FabricationYear,
+                Motorization = car.Motorization,
+                Option = car.Option,
+                Photo = car.Photo,
+                CategoryId = car.CategoryId,
+                TransmissionId = car.TransmissionId
+            };
 
-        //}
+            _context.Cars.Add(newCar);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Admin");
+        }
 
         public Boolean isAdminUser()
         {
