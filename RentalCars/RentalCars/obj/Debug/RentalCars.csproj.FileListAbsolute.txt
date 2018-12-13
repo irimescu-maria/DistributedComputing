@@ -107,3 +107,11 @@ C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\Mic
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\obj\Debug\RentalCars.csproj.CopyComplete
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\obj\Debug\RentalCars.dll
 C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\obj\Debug\RentalCars.pdb
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\obj\Debug\RentalCars.Migrations.CreateTableCar.resources
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\obj\Debug\RentalCars.csproj.GenerateResource.cache
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Net.Http.Formatting.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Web.Http.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Web.Http.WebHost.dll
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Net.Http.Formatting.xml
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Web.Http.xml
+C:\Users\Maria\Desktop\GitHub\DistributedComputing\RentalCars\RentalCars\bin\System.Web.Http.WebHost.xml
