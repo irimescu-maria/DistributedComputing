@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
 }
 <h2>Index</h2>
-@Html.ActionLink("New Car", "New", "Admin", new { @class = "btn btn-primary js-new"})
+@Html.ActionLink("New Car", "New", "Admin", new { @class = "btn btn-primary js-new" })
 <br />
 <br />
 @if (Model != null)
@@ -33,7 +33,7 @@
                         <td>@car.Name</td>
                         <td>@car.FabricationYear</td>
                         <td>@car.Motorization</td>
-                        <td>@Html.ActionLink("Edit", "Edit", new { id = car.Id })</td>
+                        <td><a href="#" class="btn btn-primary" onclick="EditCar(@car.Id)"></a></td>
                         <td>
                             <button data-car-id="@car.Id" class="btn-link js-delete">Delete</button>
 
@@ -45,6 +45,25 @@
     }
 }
 
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h3 class="modal-title">Edit Car</h3>
+            </div>
+            <div class="modal-body" id="myModalBodyDiv1">
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<input type="hidden" id="hiddenCarId" />
 @section scripts{
     <script>
         $(document).ready(function () {
@@ -63,11 +82,7 @@
                                     button.remove().draw();
                                 });
 
-                                $('#cars').each(function () {
-                                    if (button.first('tr').children("td").length < 1) {
-                                        $(this).hide();
-                                    }
-                                });
+
 
                             }
                         });
@@ -75,5 +90,16 @@
                 });
             });
         });
+
+        var EditCar = function (id) {
+
+            var url = "/admin/edit?id=" + id;
+
+            $("#myModalBodyDiv1").load(url, function () {
+                $("#myModal1").modal("show");
+
+            })
+
+        }
     </script>
 }

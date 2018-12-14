@@ -18,8 +18,6 @@ namespace RentalCars.Controllers.api
             _context = new ApplicationDbContext();
         }
 
-     
-
         //DELETE /api/cars/1
         [HttpDelete]
         public void Delete(int id)

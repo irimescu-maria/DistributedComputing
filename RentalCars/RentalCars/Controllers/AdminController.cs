@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using RentalCars.Models;
 using RentalCars.ViewModels;
 using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -21,6 +22,7 @@ namespace RentalCars.Controllers
         // GET: Admin
         //This method displays all the car from the database
         public ActionResult Index()
+
         {
             if (isAdminUser())
             {
@@ -72,6 +74,54 @@ namespace RentalCars.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Admin");
+        }
+
+        //EDIT
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == id);
+
+            if (car == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new CarFormViewModel()
+            {
+                Car = car,
+                Categories = _context.Categories.ToList(),
+                Transmissions = _context.Transmissions.ToList()
+            };
+
+            return PartialView(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Car car)
+        {
+            var categories = _context.Categories.ToList();
+            var transmissions = _context.Transmissions.ToList();
+
+
+            var editCar = _context.Cars.Single(c => c.Id == car.Id);
+
+            if (car.Id > 0)
+            {
+                editCar.Id = car.Id;
+                editCar.Name = car.Name;
+                editCar.FabricationYear = car.FabricationYear;
+                editCar.Motorization = car.Motorization;
+                editCar.Option = car.Option;
+                editCar.Photo = car.Photo;
+                editCar.TransmissionId = car.TransmissionId;
+                editCar.CategoryId = car.CategoryId;
+
+                _context.Cars.AddOrUpdate(editCar);
+                _context.SaveChanges();
+            }
+
+            return View("Index");
         }
 
         public Boolean isAdminUser()

@@ -1,0 +1,81 @@
+﻿@model RentalCars.ViewModels.CarFormViewModel
+
+<div>
+
+    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { id = "myForm" }))
+    {
+        @Html.HiddenFor(model => model.Car.Id)
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.Name)
+            @Html.TextBoxFor(model => model.Car.Name, new { @class = "form-control" })
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.FabricationYear)
+            @Html.TextBoxFor(model => model.Car.FabricationYear, new { @class = "form-control" })
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.Motorization)
+            @Html.TextBoxFor(model => model.Car.Motorization, new { @class = "form-control" })
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.Option)
+            @Html.TextBoxFor(model => model.Car.Option, new { @class = "form-control" })
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.Photo)
+            @Html.TextBoxFor(model => model.Car.Photo, new { @class = "form-control" })
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Car.CategoryId)
+            @Html.DropDownListFor(model => model.Car.CategoryId, new SelectList(Model.Categories, "Id", "Class"), "Name", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Car.CategoryId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayNameFor(model => model.Car.TransmissionId)
+            @Html.DropDownListFor(model => model.Car.TransmissionId, new SelectList(Model.Transmissions, "Id", "Type"), "Name", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Car.TransmissionId)
+        </div>
+
+        <a href="#" id="btnSubmit" class="btn btn-success btn-block">
+            @if (Model.Car.Id > 0)
+            {<span>Update</span> }
+            else
+            {<span>Save</span>}
+        </a>
+
+
+
+        <div style="text-align:center;display:none" id="loaderDiv">
+            <img src="~/Content/InternetSlowdown_Day.gif" width="150" />
+        </div>
+    }
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function () {
+
+            $("#loaderDiv").show();
+
+            var myformdata = $("#myForm").serialize();
+
+            $.ajax({
+
+                type: "POST",
+                url: "/admin/edit",
+                data: myformdata,
+                success: function () {
+                    $("#loaderDiv").hide();
+                    $("#myModal").modal("hide");
+                    window.location.href = "/admin/index";
+                }
+            })
+        })
+
+    })
+
+
+</script>
