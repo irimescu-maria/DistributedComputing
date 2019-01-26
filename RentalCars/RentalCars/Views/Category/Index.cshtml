@@ -1,0 +1,37 @@
+﻿
+@model IEnumerable<RentalCars.Models.Category>
+<br/>
+<br/>
+@Html.ActionLink("Add new category", "New", "Category", new { @class = "btn btn-primary"})
+<br />
+
+@if (!Model.Any())
+{
+    <h2>You don't have any category yet.</h2>
+}
+else
+{
+    <br />
+    <table id="categories" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+          
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <th>@category.Id</th>
+                    <th>@category.Class</th>
+                    <th>@Html.ActionLink("Edit", "Edit", "Category", new { @class = "btn btn-info" }) 
+                        @Html.ActionLink("Delete", "Delete", "Category", new { @class = "btn btn-danger"})</th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}

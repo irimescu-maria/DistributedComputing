@@ -186,6 +186,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\api\CarsController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -193,9 +194,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812130922445_CreateTableCar.cs" />
-    <Compile Include="Migrations\201812130922445_CreateTableCar.Designer.cs">
-      <DependentUpon>201812130922445_CreateTableCar.cs</DependentUpon>
+    <Compile Include="Migrations\201901260850402_CreateTables.cs" />
+    <Compile Include="Migrations\201901260850402_CreateTables.Designer.cs">
+      <DependentUpon>201901260850402_CreateTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901260910054_AddValidationForCarModel.cs" />
+    <Compile Include="Migrations\201901260910054_AddValidationForCarModel.Designer.cs">
+      <DependentUpon>201901260910054_AddValidationForCarModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,6 +277,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\New.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,8 +297,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812130922445_CreateTableCar.resx">
-      <DependentUpon>201812130922445_CreateTableCar.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901260850402_CreateTables.resx">
+      <DependentUpon>201901260850402_CreateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901260910054_AddValidationForCarModel.resx">
+      <DependentUpon>201901260910054_AddValidationForCarModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
