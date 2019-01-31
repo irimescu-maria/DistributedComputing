@@ -1,0 +1,47 @@
+﻿@model RentalCars.Models.Category
+
+<div>
+    @using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { id = "myForm" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Class)
+            @Html.TextBoxFor(model => model.Class, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Class, "", new { @class = "text-danger" })
+        </div>
+
+        <a href="#" id="btnSubmit" class="btn btn-success">
+            @if (Model.Id > 0)
+            {<span>Update</span> }
+            else
+            {<span>Save</span>}
+        </a>
+
+        <div style="text-align:center;display:none" id="loaderDiv">
+            <img src="~/Content/InternetSlowdown_Day.gif" width="150" />
+        </div>
+    }
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+
+            $("#loaderDiv").show();
+            var myformdata = $("#myForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "/Category/edit",
+                data: myformdata,
+                success: function () {
+                    $("#loaderDiv").hide();
+                    $("#myModal").modal("hide");
+                    window.location.href = "/category/index";
+                }
+            })
+        })
+    })
+</script>

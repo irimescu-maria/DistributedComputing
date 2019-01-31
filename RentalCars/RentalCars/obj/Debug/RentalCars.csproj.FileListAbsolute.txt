@@ -233,3 +233,4 @@ C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\D
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.Migrations.CreateTables.resources
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.csproj.GenerateResource.cache
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.Migrations.AddValidationForCarModel.resources
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.Migrations.ModifyCarModel.resources

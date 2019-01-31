@@ -1,11 +1,12 @@
 ﻿
 @model IEnumerable<RentalCars.Models.Category>
-<br/>
-<br/>
-@Html.ActionLink("Add new category", "New", "Category", new { @class = "btn btn-primary"})
 <br />
-
-@if (!Model.Any())
+<br />
+@Html.ActionLink("Add new category", "New", "Category", new { @class = "btn btn-primary" })
+<br />
+@if (Model != null)
+{
+if (!Model.Any())
 {
     <h2>You don't have any category yet.</h2>
 }
@@ -17,8 +18,9 @@ else
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th></th>
-          
+                <th>Edit</th>
+                <th>Delete</th>
+
             </tr>
         </thead>
         <tbody>
@@ -27,11 +29,62 @@ else
                 <tr>
                     <th>@category.Id</th>
                     <th>@category.Class</th>
-                    <th>@Html.ActionLink("Edit", "Edit", "Category", new { @class = "btn btn-info" }) 
-                        @Html.ActionLink("Delete", "Delete", "Category", new { @class = "btn btn-danger"})</th>
+                    <th>
+                        <a href="#" class="btn btn-primary" onclick="EditCategory(@category.Id)">Edit</a>
+                    </th>
+                    <th>
+                        <button data-category-id="@category.Id" class="btn btn-danger js-delete">Delete</button>
+                    </th>
                 </tr>
             }
 
         </tbody>
     </table>
+}
+}
+<div class="modal fade" id="editCategory">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h3 class="modal-title">Edit Category</h3>
+            </div>
+            <div class="modal-body" id="modalEditCategory"></div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hiddenCategoryId" />
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $("#categories").on("click", " .js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this category?", function (result) {
+                    if (result) {
+
+                        $.ajax({
+                            url: "/api/category/" + button.attr("data-category-id"),
+                            method: "DELETE",
+                            success: function () {
+
+                                button.parents('tr').fadeOut(function () {
+                                    button.remove().draw();
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        var EditCategory = function (id) {
+            var url = "/category/edit?id=" + id;
+
+            $("#modalEditCategory").load(url, function () {
+                $("#editCategory").modal("show");
+            });
+        }
+    </script>
 }

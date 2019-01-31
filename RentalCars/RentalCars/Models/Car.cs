@@ -16,7 +16,6 @@ namespace RentalCars.Models
 
         [Required]
         [Display(Name= "Fabrication Year")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd")]
         public int FabricationYear { get; set; }
 
         [Required]
@@ -29,6 +28,9 @@ namespace RentalCars.Models
 
         [Required]
         public string Photo { get; set; }
+
+        [Required]
+        public double Price { get; set; }
 
         [Required]
         [Display(Name = "Category")]

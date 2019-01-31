@@ -35,6 +35,46 @@ namespace RentalCars.Controllers
             return View(Roles);
         }
 
+        //GET
+        [HttpGet]
+        public ActionResult Create()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                if (!isAdminUser())
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            var Role = new IdentityRole();
+            return View(Role);
+        }
+
+        //POST
+        [HttpPost]
+        public ActionResult Create(IdentityRole Role)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                if (!isAdminUser())
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                RedirectToAction("Index", "Home");
+            }
+
+            _context.Roles.Add(Role);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public Boolean isAdminUser()
         {
             if (User.Identity.IsAuthenticated)
@@ -54,5 +94,7 @@ namespace RentalCars.Controllers
             }
             return false;
         }
+
+
     }
 }

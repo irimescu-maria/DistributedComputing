@@ -9,10 +9,12 @@
 
 @using (Html.BeginForm("New", "Admin", FormMethod.Post))
 {
+    @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.Car.Id)
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.Name)
         @Html.TextBoxFor(model => model.Car.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.Name, null, new { @class = "help-inline"})
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.FabricationYear)

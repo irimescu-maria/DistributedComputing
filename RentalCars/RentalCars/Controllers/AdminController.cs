@@ -70,10 +70,15 @@ namespace RentalCars.Controllers
                 TransmissionId = car.TransmissionId
             };
 
-            _context.Cars.Add(newCar);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Cars.Add(newCar);
+                _context.SaveChanges();
 
-            return RedirectToAction("Index", "Admin");
+                return RedirectToAction("Index", "Admin");
+
+            }
+            return View();
         }
 
         //EDIT

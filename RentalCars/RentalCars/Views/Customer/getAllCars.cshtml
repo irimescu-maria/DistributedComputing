@@ -1,0 +1,25 @@
+﻿@model IEnumerable<RentalCars.Models.Car>
+@{
+    ViewBag.Title = "getAllCars";
+}
+
+<div class="container">
+    @foreach(var car in Model)
+    {
+        <div class="row">
+            <div id="title">
+                @car.Name
+            </div>
+            <div id="photo">
+                @car.Photo
+            </div>
+            <div id="price">
+                Price : @car.Price per day
+            </div>
+            <div>
+                <button class="btn btn-primary">Rent</button>
+            </div>
+        </div>
+    }
+</div>
+
