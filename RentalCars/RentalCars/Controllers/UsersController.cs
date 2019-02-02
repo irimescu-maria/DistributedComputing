@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using RentalCars.Models;
+using RentalCars.ViewModels;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -38,6 +39,23 @@ namespace RentalCars.Controllers
                 ViewBag.Name = "Not Logged IN";
             }
             return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == id);
+
+            if (car == null)
+                return HttpNotFound();
+
+            var viewModel = new CarFormViewModel()
+            {
+                Car = car,
+                Categories = _context.Categories.ToList(),
+                Transmissions = _context.Transmissions.ToList()
+            };
+
+            return View(viewModel);
         }
 
         public Boolean isAdminUser()

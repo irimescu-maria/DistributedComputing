@@ -1,0 +1,26 @@
+﻿@model RentalCars.ViewModels.CarFormViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="car-detail">
+    <div class="title">
+        @Html.DisplayFor(model => model.Car.Name)
+    </div>
+    <div class="photo">
+        @Html.DisplayFor(model => model.Car.Photo)
+    </div>
+    <div class="price">
+        @Html.DisplayFor(model => model.Car.Price)
+        @Html.ActionLink("Rent", "Rent",null, new { @class = "btn btn-primary"})
+       
+    </div>
+    <div class="specification">
+        @Html.DisplayFor(model => model.Car.FabricationYear)
+        @Html.DisplayFor(model => model.Car.Motorization)
+        @Html.DisplayFor(model => model.Car.Option)
+        @Html.DisplayFor(model => model.Car.Category.Class)
+        @Html.DisplayFor(model => model.Car.Transmission.Type)
+    </div>
+</div>

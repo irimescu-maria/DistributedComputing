@@ -8,6 +8,8 @@ namespace RentalCars.Models
         public DbSet<Car> Cars { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transmission> Transmissions { get; set; }
+        public DbSet<Rent> Rents { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
 
         public ApplicationDbContext()

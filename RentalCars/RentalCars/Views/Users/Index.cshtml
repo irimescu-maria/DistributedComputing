@@ -19,7 +19,7 @@ else
         <div class="row">
             <div id="title">
 
-                <a href="@Url.Action("Details", "Users")"> @car.Name</a>
+                <a href="@Url.Action("Details", "Users", new { id = @car.Id})"> @car.Name</a>
                
             </div>
             <div id="photo">

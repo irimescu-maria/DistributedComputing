@@ -34,7 +34,8 @@ namespace RentalCars.Controllers
             }
             else
             {
-                return View("Index", "Home");
+                //return View("Index","", "Users");
+                return RedirectToAction("Index","Home");
             }
 
         }
