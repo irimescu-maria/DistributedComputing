@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using RentalCars.Models;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace RentalCars.Controllers
@@ -20,6 +21,9 @@ namespace RentalCars.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                
+                var cars = _context.Cars.ToList();
+                
                 var user = User.Identity;
                 ViewBag.Name = user.Name;
                 ViewBag.displayMenu = "No";
@@ -27,7 +31,7 @@ namespace RentalCars.Controllers
                 {
                     ViewBag.displayMenu = "Yes";
                 }
-                return View();
+                return View(cars);
             }
             else
             {

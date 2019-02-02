@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: lavender;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +23,37 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.car-page{
+    width: auto;
+    border: 2px solid black;
+    padding-top: 25px;
+    margin-top: 10%;
+   
+}
+
+.row {
+    margin-left: 25px;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: white;
+    width: 350px;
+    padding: 5px;
+}
+
+    .row:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #photo.row {
+        width: 240px;
+        height: 350px;
+    } 
+    #title a {
+        color: black;
+    }
+    #title a:hover {
+        color: red;
+    }
+ 

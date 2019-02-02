@@ -189,7 +189,6 @@
     <Compile Include="Controllers\api\CategoryController.cs" />
     <Compile Include="Controllers\api\TransmissionController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -209,6 +208,10 @@
     <Compile Include="Migrations\201901261359096_ModifyCarModel.cs" />
     <Compile Include="Migrations\201901261359096_ModifyCarModel.Designer.cs">
       <DependentUpon>201901261359096_ModifyCarModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901311930016_UpdateTableCar.cs" />
+    <Compile Include="Migrations\201901311930016_UpdateTableCar.Designer.cs">
+      <DependentUpon>201901311930016_UpdateTableCar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,7 +295,6 @@
     <Content Include="Views\Transmission\New.cshtml" />
     <Content Include="Views\Transmission\Edit.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
-    <Content Include="Views\Customer\getAllCars.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901261359096_ModifyCarModel.resx">
       <DependentUpon>201901261359096_ModifyCarModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901311930016_UpdateTableCar.resx">
+      <DependentUpon>201901311930016_UpdateTableCar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

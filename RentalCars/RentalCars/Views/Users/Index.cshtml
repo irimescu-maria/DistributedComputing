@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<RentalCars.Models.Car>
+@{
     ViewBag.Title = "Index";
 }
 
@@ -11,5 +12,27 @@
 }
 else
 {
-    <h2>  Welcome <strong>@ViewBag.Name</strong> :) .We will add user module soon </h2>
+
+<div class="car-page">
+    @foreach(var car in Model)
+    {
+        <div class="row">
+            <div id="title">
+
+                <a href="@Url.Action("Details", "Users")"> @car.Name</a>
+               
+            </div>
+            <div id="photo">
+               <img src="@car.Photo"/> @car.Photo
+            </div>
+            <div id="price">
+                Price : @car.Price per day
+            </div>
+            <div>
+                <button class="btn btn-primary btn-block">Rent</button>
+            </div>
+        </div>
+    }
+</div>
+
 }
