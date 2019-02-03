@@ -58,6 +58,77 @@ namespace RentalCars.Controllers
             return View(viewModel);
         }
 
+        //GET
+        [HttpGet]
+        public ActionResult Rent(int id)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == id);
+
+            if (car == null)
+                return HttpNotFound();
+
+            var rent = new Rent();
+            var viewModel = new RentFormViewModel()
+            {
+                Car = car,
+                Customer = rent.Customer,
+                Username = User.Identity.Name,
+                RentedDate = DateTime.Now,
+                CarId=car.Id
+                
+            };
+         
+         
+            return View(viewModel);
+        }
+
+        //POST
+        [HttpPost]
+        public ActionResult Rent(Rent rent)
+        {
+            var car = _context.Cars.SingleOrDefault(c => c.Id == rent.CarId);
+            var newRent = new Rent()
+            {
+                Username = rent.Username,
+                TotalPrice = rent.TotalPrice,
+                ReturnedDate = rent.ReturnedDate,
+                RentedDate = rent.RentedDate,
+                CustomerId = rent.CustomerId,
+                Customer = new Customer
+                {
+                    Id = rent.CustomerId,
+                    FirstName = rent.Customer.FirstName,
+                    LastName = rent.Customer.LastName,
+                    Phone = rent.Customer.Phone
+                },
+                CarId = car.Id
+            };
+
+          
+            _context.Rents.Add(newRent);
+            _context.SaveChanges();
+
+            return RedirectToAction("Complete", new { id = newRent.Id });
+        }
+
+        //GET
+        public ActionResult Complete(int id)
+        {
+            //Validate customer owns this order
+            bool isValid = _context.Rents.Include("Customer").Any(
+               o => o.Id == id &&
+               o.Username == User.Identity.Name);
+
+            if (isValid)
+            {
+                return View(id);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
         public Boolean isAdminUser()
         {
             if (User.Identity.IsAuthenticated)

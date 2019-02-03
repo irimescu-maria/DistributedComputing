@@ -13,7 +13,7 @@
     </div>
     <div class="price">
         @Html.DisplayFor(model => model.Car.Price)
-        @Html.ActionLink("Rent", "Rent",null, new { @class = "btn btn-primary"})
+        @Html.ActionLink("Rent", "Rent", "Users", new { id =  @Model.Car.Id}, new { @class = "btn btn-primary" })
        
     </div>
     <div class="specification">

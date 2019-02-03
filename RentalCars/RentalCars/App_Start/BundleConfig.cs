@@ -25,7 +25,13 @@ namespace RentalCars
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-datepicker3.css",
                       "~/Content/Site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui")
+       .Include("~/Scripts/jquery-ui-{version}.js"));
+            bundles.Add(new StyleBundle("~/Content/jqueryui")
+                   .Include("~/Content/themes/base/all.css"));
         }
     }
 }

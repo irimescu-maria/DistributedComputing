@@ -1,0 +1,10 @@
+﻿@model int
+@{
+    ViewBag.Title = "Checkout Complete";
+}
+<h2>Checkout Complete</h2>
+<p>Thanks for your rental! Your rent number is: @Model</p>
+<p>
+    For rent more cars <br />
+    @Html.ActionLink("\nBack to List", "Index", "Users")
+</p>
