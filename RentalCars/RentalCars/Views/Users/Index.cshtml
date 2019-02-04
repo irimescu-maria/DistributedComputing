@@ -29,7 +29,7 @@ else
                 Price : @car.Price per day
             </div>
             <div>
-                <button class="btn btn-primary btn-block">Rent</button>
+                  @Html.ActionLink("Rent", "Rent", "Users", new { id = car.Id }, new { @class = "btn btn-primary btn-block" })
             </div>
         </div>
     }

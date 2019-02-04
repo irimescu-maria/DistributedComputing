@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>*@
-    @*<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>*@
-
-    @*<script ref="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>*@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
+        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <script src="/bundles/jqueryval"></script>
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/jqueryui")
+
+    @Styles.Render("~/Content/css")
+
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -29,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Rent-A-Car", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -43,8 +46,6 @@
                     else
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -61,7 +62,8 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 <script type="text/javascript">
@@ -72,7 +74,7 @@
             dateFormat: 'dd-mm-yy',
             changeMonth: true,
             changeYear: true,
-            
+
         });
 
         $('.end-date').datepicker({
@@ -84,7 +86,7 @@
                 myfunc();
             }
         });
-    });       
+    });
 
 
 
@@ -94,7 +96,7 @@
         var price = $('.price').val();
         var diff = new Date(end - start).getDay();
         var totalPrice = diff * price;
-       return  $('.total-price').val(totalPrice);
+        return $('.total-price').val(totalPrice);
         alert(Math.round(totalPrice));
     }
 
@@ -134,6 +136,6 @@
     //    var priceTotal = price * diff;
     //    $('.price').val(priceTotal);
     //    alert(priceTotal);
-       
+
     //}
 </script>

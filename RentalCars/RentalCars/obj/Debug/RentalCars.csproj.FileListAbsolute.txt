@@ -239,3 +239,16 @@ C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\D
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.pdb
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.csprojAssemblyReference.cache
 C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\obj\Debug\RentalCars.Migrations.AddTotalPriceToRentTable.resources
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.Logging.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Nexmo.Api.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Diagnostics.Process.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Security.Cryptography.Cng.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Security.Cryptography.OpenSsl.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.Logging.xml
+C:\Users\Maria\Desktop\Git-Hub\Distributed-Computing\RentalCars\RentalCars\bin\Microsoft.Extensions.Logging.Abstractions.xml

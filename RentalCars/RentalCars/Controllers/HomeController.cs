@@ -26,24 +26,12 @@ namespace RentalCars.Controllers
             }
             else
             {
-                return View();
+
+                return View(_context.Cars.ToList());
             }
            
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         public Boolean isAdminUser()
         {

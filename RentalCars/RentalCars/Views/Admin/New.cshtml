@@ -5,44 +5,49 @@
     ViewBag.Title = "New";
 }
 
-<h2>New Car</h2>
+<h2>Add new car</h2>
 
 @using (Html.BeginForm("New", "Admin", FormMethod.Post))
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.Car.Id)
+    @*<p class="alert alert-info">All fields are <strong>required</strong>.</p>*@
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.Name)
         @Html.TextBoxFor(model => model.Car.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Car.Name, null, new { @class = "help-inline"})
+        @Html.ValidationMessageFor(model => model.Car.Name, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.FabricationYear)
         @Html.TextBoxFor(model => model.Car.FabricationYear, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.FabricationYear, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.Motorization)
         @Html.TextBoxFor(model => model.Car.Motorization, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.Motorization, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.Option)
         @Html.TextBoxFor(model => model.Car.Option, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.Option, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.Photo)
         @Html.TextBoxFor(model => model.Car.Photo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.Photo, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.CategoryId)
         @Html.DropDownListFor(model => model.Car.CategoryId, new SelectList(Model.Categories, "Id", "Class"), "Name", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Car.CategoryId)
+        @Html.ValidationMessageFor(model => model.Car.CategoryId, null, new { @class = "text-danger" })
     </div>
     <div class="display-field">
         @Html.DisplayNameFor(model => model.Car.TransmissionId)
         @Html.DropDownListFor(model => model.Car.TransmissionId, new SelectList(Model.Transmissions, "Id", "Type"), "Name", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Car.TransmissionId)
+        @Html.ValidationMessageFor(model => model.Car.TransmissionId, null, new { @class = "text-danger" })
     </div>
-    
+
     <br />
     <button type="submit" class="btn btn-success">Add car</button>
 }

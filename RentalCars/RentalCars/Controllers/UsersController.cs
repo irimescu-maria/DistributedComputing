@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Nexmo.Api;
 using RentalCars.Models;
 using RentalCars.ViewModels;
 using System;
@@ -60,6 +61,7 @@ namespace RentalCars.Controllers
 
         //GET
         [HttpGet]
+        [Authorize]
         public ActionResult Rent(int id)
         {
             var car = _context.Cars.SingleOrDefault(c => c.Id == id);
@@ -107,6 +109,7 @@ namespace RentalCars.Controllers
           
             _context.Rents.Add(newRent);
             _context.SaveChanges();
+
 
             return RedirectToAction("Complete", new { id = newRent.Id });
         }

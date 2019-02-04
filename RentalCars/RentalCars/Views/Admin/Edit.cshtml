@@ -35,18 +35,13 @@
             @Html.DropDownListFor(model => model.Car.TransmissionId, new SelectList(Model.Transmissions, "Id", "Type"), "Name", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Car.TransmissionId)
         </div>
-
-        <a href="#" id="btnSubmit" class="btn btn-success btn-block">
-            @if (Model.Car.Id > 0)
-            {<span>Update</span> }
-            else
-            {<span>Save</span>}
-        </a>
-
-
-
-        <div style="text-align:center;display:none" id="loaderDiv">
-            <img src="~/Content/InternetSlowdown_Day.gif" width="150" />
+        <div>
+            <a href="#" id="btnSubmit" class="btn btn-success">
+                @if (Model.Car.Id > 0)
+                {<span>Update</span> }
+                else
+                {<span>Save</span>}
+            </a>
         </div>
     }
 </div>

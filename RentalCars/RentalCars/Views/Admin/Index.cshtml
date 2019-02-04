@@ -4,7 +4,7 @@
 
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
+<h2 id="title-admin-page">List of cars</h2>
 @Html.ActionLink("New Car", "New", "Admin", new { @class = "btn btn-primary js-new" })
 <br />
 <br />
@@ -65,7 +65,7 @@
 </div>
 <input type="hidden" id="hiddenCarId" />
 @section scripts{
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $("#cars").on("click", " .js-delete", function () {
                 var button = $(this);

@@ -5,22 +5,27 @@
 }
 
 <div class="car-detail">
-    <div class="title">
+    <div class="title-details">
         @Html.DisplayFor(model => model.Car.Name)
     </div>
     <div class="photo">
         @Html.DisplayFor(model => model.Car.Photo)
     </div>
-    <div class="price">
-        @Html.DisplayFor(model => model.Car.Price)
-        @Html.ActionLink("Rent", "Rent", "Users", new { id =  @Model.Car.Id}, new { @class = "btn btn-primary" })
-       
+    <div id="price-detail">
+       Price: <strong>@Html.DisplayFor(model => model.Car.Price)</strong>  lei / day
+        <br />
+        <br />
+        @Html.ActionLink("Rent", "Rent", "Users", new { id = @Model.Car.Id }, new { @class = "btn btn-primary" })
+
     </div>
     <div class="specification">
-        @Html.DisplayFor(model => model.Car.FabricationYear)
-        @Html.DisplayFor(model => model.Car.Motorization)
-        @Html.DisplayFor(model => model.Car.Option)
-        @Html.DisplayFor(model => model.Car.Category.Class)
-        @Html.DisplayFor(model => model.Car.Transmission.Type)
+        <h4>Specification</h4>
+        <ul>
+            <li><strong>Fabrication Year:</strong> @Html.DisplayFor(model => model.Car.FabricationYear)</li>
+            <li><strong>Motorization: </strong> @Html.DisplayFor(model => model.Car.Motorization)</li>
+            <li><strong>Options: </strong> @Html.DisplayFor(model => model.Car.Option)</li>
+            <li><strong>Category: </strong>@Html.DisplayFor(model => model.Car.Category.Class)</li>
+            <li><strong>Transmission: </strong> @Html.DisplayFor(model => model.Car.Transmission.Type)</li>
+        </ul>
     </div>
 </div>
