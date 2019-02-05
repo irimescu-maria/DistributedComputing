@@ -67,7 +67,7 @@
 @section scripts{
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#cars").on("click", " .js-delete", function () {
+            $("#cars").on("click", ".js-delete", function () {
                 var button = $(this);
 
                 bootbox.confirm("Are you sure you want to delete this car ?", function (result) {
@@ -81,9 +81,6 @@
                                 button.parents('tr').fadeOut(function () {
                                     button.remove().draw();
                                 });
-
-
-
                             }
                         });
                     }

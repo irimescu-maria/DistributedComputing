@@ -9,7 +9,7 @@
         @Html.DisplayFor(model => model.Car.Name)
     </div>
     <div class="photo">
-        @Html.DisplayFor(model => model.Car.Photo)
+        <img src="~/Images/@Model.Car.Photo" width="250" height="180"/>
     </div>
     <div id="price-detail">
        Price: <strong>@Html.DisplayFor(model => model.Car.Price)</strong>  lei / day

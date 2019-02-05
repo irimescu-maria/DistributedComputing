@@ -5,23 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    @* <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+
+    @*<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>*@
+
+    @*<script src="~/Scripts/bootbox.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/bootstrap-datepicker.js"></script>*@
 
 
+    <!-- jQuery library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <script src="/bundles/jqueryval"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/jqueryui")
 
     @Styles.Render("~/Content/css")
-
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/modernizr")
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -61,7 +87,8 @@
     </div>
 
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jquery")
+
+    @*@Scripts.Render("~/bundles/jqueryval")*@
 
     @RenderSection("scripts", required: false)
 </body>
@@ -99,43 +126,4 @@
         return $('.total-price').val(totalPrice);
         alert(Math.round(totalPrice));
     }
-
-    //$('.start-date').datepicker({
-    //    dateFormat: 'yy-mm-dd',
-    //    changeMonth: true,
-    //    changeYear: true,
-    //});
-    //$('.end-date').datepicker({
-    //    dateFormat: 'yy-mm-dd',
-    //    changeMonth: true,
-    //    changeYear: true,
-    //});
-    //$('.start-date').datepicker().bind("change", function () {
-    //    var minValue = $(this).val();
-    //    minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
-    //    $('.end-date').datepicker("option", "minDate", minValue);
-    //    calculate();
-    //});
-    //$('.end-date').datepicker().bind("change", function () {
-    //    var maxValue = $(this).val();
-    //    maxValue = $.datepicker.parseDate("yy-mm-dd", maxValue);
-    //    $('.start-date').datepicker("option", "maxDate", maxValue);
-    //    calculate();
-    //});
-
-    //function calculate() {
-    //    var d1 = $('.start-date').datepicker('getDate');
-    //    var d2 = $('.end-date').datepicker('getDate');
-    //    var price = $('.price').val();
-    //    var oneDay = 24 * 60 * 60 * 1000;
-    //    var diff = 0;
-    //    if (d1 && d2) {
-
-    //        diff = Math.round(Math.abs((d2.getTime() - d1.getTime()) / (oneDay)));
-    //    }
-    //    var priceTotal = price * diff;
-    //    $('.price').val(priceTotal);
-    //    alert(priceTotal);
-
-    //}
 </script>

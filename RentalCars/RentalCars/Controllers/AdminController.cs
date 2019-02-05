@@ -4,7 +4,9 @@ using RentalCars.Models;
 using RentalCars.ViewModels;
 using System;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace RentalCars.Controllers
@@ -60,26 +62,33 @@ namespace RentalCars.Controllers
         [HttpPost]
         public ActionResult New(Car car)
         {
+            HttpPostedFileBase file = Request.Files[0];
+            byte[] imageSize = new byte[file.ContentLength];
+            file.InputStream.Read(imageSize, 0, (int)file.ContentLength);
+            string path = Path.Combine(Server.MapPath("~/Images"),
+                                      Path.GetFileName(file.FileName));
+            file.SaveAs(path);
             var newCar = new Car
             {
                 Name = car.Name,
                 FabricationYear = car.FabricationYear,
                 Motorization = car.Motorization,
                 Option = car.Option,
-                Photo = car.Photo,
+                Photo = file.FileName,
+                Price = car.Price,
                 CategoryId = car.CategoryId,
                 TransmissionId = car.TransmissionId
             };
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _context.Cars.Add(newCar);
                 _context.SaveChanges();
 
                 return RedirectToAction("Index", "Admin");
 
-            }
-            return View();
+           // }
+            //return View();
         }
 
         //EDIT

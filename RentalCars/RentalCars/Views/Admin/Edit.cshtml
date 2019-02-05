@@ -22,8 +22,8 @@
             @Html.TextBoxFor(model => model.Car.Option, new { @class = "form-control" })
         </div>
         <div class="display-label">
-            @Html.DisplayNameFor(model => model.Car.Photo)
-            @Html.TextBoxFor(model => model.Car.Photo, new { @class = "form-control" })
+            <label for="file">Upload Image:</label>
+            <input type="file" name="file" id="file" class="form-control form-control-sm" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
         </div>
         <div class="display-label">
             @Html.DisplayNameFor(model => model.Car.CategoryId)
@@ -47,7 +47,7 @@
 </div>
 
 
-<script>
+<script type="text/javascript">
 
     $(document).ready(function () {
 
@@ -56,7 +56,7 @@
             $("#loaderDiv").show();
 
             var myformdata = $("#myForm").serialize();
-
+            jQuery.noConflict();
             $.ajax({
 
                 type: "POST",

@@ -10,7 +10,9 @@ namespace RentalCars
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                         "~/Scripts/bootbox.js"));
+                        "~/Scripts/jquery-ui-{version}.js",
+                         "~/Scripts/bootbox.js",
+                         "~/Scripts/bootbo.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -26,12 +28,10 @@ namespace RentalCars
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker3.css",
+                      "~/Content/themes/base/all.css",
                       "~/Content/Site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui")
-       .Include("~/Scripts/jquery-ui-{version}.js"));
-            bundles.Add(new StyleBundle("~/Content/jqueryui")
-                   .Include("~/Content/themes/base/all.css"));
+        
         }
     }
 }

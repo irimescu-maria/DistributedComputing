@@ -1,13 +1,15 @@
 ﻿@model RentalCars.ViewModels.CarFormViewModel
 @{
-    /**/
+                /**/
 
-    ViewBag.Title = "New";
+                /**/
+
+                ViewBag.Title = "New";
 }
 
 <h2>Add new car</h2>
 
-@using (Html.BeginForm("New", "Admin", FormMethod.Post))
+@using (Html.BeginForm("New", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.Car.Id)
@@ -33,9 +35,16 @@
         @Html.ValidationMessageFor(model => model.Car.Option, null, new { @class = "text-danger" })
     </div>
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Car.Photo)
-        @Html.TextBoxFor(model => model.Car.Photo, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Car.Photo, null, new { @class = "text-danger" })
+        @Html.DisplayNameFor(model => model.Car.Price)
+        @Html.TextBoxFor(model => model.Car.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Car.Price, null, new { @class = "text-danger" })
+    </div>
+    <div class="display-label">
+     
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" class="form-control form-control-sm" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/><br><br>
+
+        <br><br>
     </div>
     <div class="display-label">
         @Html.DisplayNameFor(model => model.Car.CategoryId)
